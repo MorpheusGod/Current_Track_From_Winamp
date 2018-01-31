@@ -71,9 +71,8 @@
             this.TrackName.AutoSize = true;
             this.TrackName.Location = new System.Drawing.Point(6, 25);
             this.TrackName.Name = "TrackName";
-            this.TrackName.Size = new System.Drawing.Size(35, 13);
+            this.TrackName.Size = new System.Drawing.Size(0, 13);
             this.TrackName.TabIndex = 0;
-            this.TrackName.Text = "label1";
             // 
             // MainForm
             // 

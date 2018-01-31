@@ -21,7 +21,7 @@ namespace TrackFromWinamp
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            TrackName.Text = track.GetSongTitle();
+            TrackName.Text = $"Сейчас играет: {track.GetSongTitle()}";
         }
 
         private void StartWork_Click(object sender, System.EventArgs e)
