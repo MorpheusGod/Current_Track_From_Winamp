@@ -14,14 +14,15 @@ namespace TrackFromWinamp
             InitializeComponent();
             timer = new Timer();
             timer.Tick += Timer_Tick;
-            timer.Interval = 1000;
+            timer.Interval = 100;
             track = new CurrentTrack();
             StopWork.Enabled = false;
+            
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            TrackName.Text = $"Сейчас играет: {track.GetSongTitle()}";
+            TrackName.Text = track.GetSongTitle();
         }
 
         private void StartWork_Click(object sender, System.EventArgs e)
@@ -34,7 +35,7 @@ namespace TrackFromWinamp
         private void StopWork_Click(object sender, System.EventArgs e)
         {
             timer.Stop();
-            TrackName.Text = "";
+            TrackName.Text = "Программа не запущена или остановлена.";
             StartWork.Enabled = true;
             StopWork.Enabled = false;
         }

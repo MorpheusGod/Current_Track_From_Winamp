@@ -17,12 +17,12 @@ namespace TrackFromWinamp.Backend
         public string GetSongTitle()
         {
             IntPtr hwnd = FindWindow(lpClassName, null);
-            if (hwnd.Equals(IntPtr.Zero)) return "Not Running.....";
+            if (hwnd.Equals(IntPtr.Zero)) return "Плеер не запущен.....";
 
             string lpText = new string((char)0, 100);
             int intLength = GetWindowText(hwnd, lpText, lpText.Length);
 
-            if ((intLength <= 0) || (intLength > lpText.Length)) return "Unknown";
+            if ((intLength <= 0) || (intLength > lpText.Length)) return "Неизвестно.";
 
             string strTitle = lpText.Substring(0, intLength);
             int intName = strTitle.IndexOf(strTtlEnd);
