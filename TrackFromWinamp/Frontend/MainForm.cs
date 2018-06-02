@@ -14,15 +14,17 @@ namespace TrackFromWinamp
             InitializeComponent();
             timer = new Timer();
             timer.Tick += Timer_Tick;
-            timer.Interval = 100;
+            timer.Interval = 500;
             track = new CurrentTrack();
             StopWork.Enabled = false;
-            
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            TrackName.Text = track.GetSongTitle();
+           if(TrackName.Text != track.GetSongTitle())
+            {
+                TrackName.Text = track.GetSongTitle();
+            }
         }
 
         private void StartWork_Click(object sender, System.EventArgs e)

@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 
 namespace TrackFromWinamp.Backend
 {
+    public delegate void Result(string message);
+
     public class CurrentTrack
     {
+        public event Result GetMessage;
+
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
@@ -55,5 +60,7 @@ namespace TrackFromWinamp.Backend
                 return false;
             }
         }
+
+       
     }
 }
